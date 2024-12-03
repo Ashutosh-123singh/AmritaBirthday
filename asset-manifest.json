@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AmritaBirthday/static/css/main.6123e95f.css",
+    "main.js": "/AmritaBirthday/static/js/main.c82b3549.js",
+    "static/js/453.02200b01.chunk.js": "/AmritaBirthday/static/js/453.02200b01.chunk.js",
+    "index.html": "/AmritaBirthday/index.html",
+    "main.6123e95f.css.map": "/AmritaBirthday/static/css/main.6123e95f.css.map",
+    "main.c82b3549.js.map": "/AmritaBirthday/static/js/main.c82b3549.js.map",
+    "453.02200b01.chunk.js.map": "/AmritaBirthday/static/js/453.02200b01.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6123e95f.css",
+    "static/js/main.c82b3549.js"
+  ]
+}
