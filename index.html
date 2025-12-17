@@ -1,35 +1,56 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/AmritaBirthday/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/AmritaBirthday/logo192.png"/><link rel="manifest" href="/AmritaBirthday/manifest.json"/><title>React App</title><script defer="defer" src="/AmritaBirthday/static/js/main.c82b3549.js"></script><link href="/AmritaBirthday/static/css/main.6123e95f.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root">
-  <div id="root">
-    
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="/AmritaBirthday/favicon.ico"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="Web site created using create-react-app"/>
+  <link rel="apple-touch-icon" href="/AmritaBirthday/logo192.png"/>
+  <link rel="manifest" href="/AmritaBirthday/manifest.json"/>
+  <title>React App</title>
 
-<script>
-  function replaceName() {
-    document.querySelectorAll("*").forEach(el => {
-      if (el.children.length === 0 && el.textContent.includes("Shambhavi Rai")) {
-        el.textContent = el.textContent.replaceAll(
-          "Shambhavi Rai",
-          "Amrita Rai"
-        );
-      }
+  <!-- React build files -->
+  <script defer src="/AmritaBirthday/static/js/main.c82b3549.js"></script>
+  <link href="/AmritaBirthday/static/css/main.6123e95f.css" rel="stylesheet">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!-- IMPORTANT: React needs exactly ONE root element -->
+  <div id="root"></div>
+
+  <!-- Safe text replacement script -->
+  <script>
+    function replaceName() {
+      document.querySelectorAll("*").forEach(function (el) {
+        if (
+          el.children.length === 0 &&
+          el.textContent &&
+          el.textContent.indexOf("Shambhavi Rai") !== -1
+        ) {
+          el.textContent = el.textContent.replace(
+            /Shambhavi Rai/g,
+            "Amrita Rai"
+          );
+        }
+      });
+    }
+
+    // Run after initial render
+    setTimeout(replaceName, 500);
+
+    // Observe React DOM updates
+    const observer = new MutationObserver(function () {
+      replaceName();
     });
-  }
 
-  // Run once
-  replaceName();
-
-  // Watch for React re-renders
-  const observer = new MutationObserver(() => {
-    replaceName();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-</script>
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  </script>
 
 </body>
-</html>
-
 </html>
