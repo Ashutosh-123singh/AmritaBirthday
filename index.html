@@ -1,17 +1,35 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/AmritaBirthday/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/AmritaBirthday/logo192.png"/><link rel="manifest" href="/AmritaBirthday/manifest.json"/><title>React App</title><script defer="defer" src="/AmritaBirthday/static/js/main.c82b3549.js"></script><link href="/AmritaBirthday/static/css/main.6123e95f.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root">
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const replaceText = () => {
-      document.body.innerHTML = document.body.innerHTML.replaceAll(
-        "Shambhavi Rai",
-        "Amrita Rai"
-      );
-    };
+  <div id="root">
+    
+  </div>
 
-    // run immediately and again after React renders
-    replaceText();
-    setTimeout(replaceText, 1000);
+<script>
+  function replaceName() {
+    document.querySelectorAll("*").forEach(el => {
+      if (el.children.length === 0 && el.textContent.includes("Shambhavi Rai")) {
+        el.textContent = el.textContent.replaceAll(
+          "Shambhavi Rai",
+          "Amrita Rai"
+        );
+      }
+    });
+  }
+
+  // Run once
+  replaceName();
+
+  // Watch for React re-renders
+  const observer = new MutationObserver(() => {
+    replaceName();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
   });
 </script>
 
-</div></body></html>
+</body>
+</html>
+
+</html>
